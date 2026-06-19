@@ -15,7 +15,7 @@
         <span class="amz-nav-link">About</span>
         <span class="amz-nav-link">Contact</span>
       </div>
-      <button class="amz-nav-cta">Get Access Now</button>
+      <button class="amz-nav-cta" @click="goToRedirect">Get Access Now</button>
     </nav>
 
     <!-- ── Hero ── -->
@@ -35,8 +35,8 @@
           from top Amazon &amp; e-commerce experts.
         </p>
         <div class="amz-hero-buttons">
-          <button class="amz-btn-primary">Explore Replay Vault →</button>
-          <button class="amz-btn-ghost">
+          <button class="amz-btn-primary" @click="goToRedirect">Explore Replay Vault →</button>
+          <button class="amz-btn-ghost" @click="goToRedirect">
             <div class="amz-btn-ghost-play">▶</div>
             Watch Demo
           </button>
@@ -158,7 +158,7 @@
                   {{ v.host }} · {{ v.duration }}
                 </div>
               </div>
-              <button class="amz-watch-btn">Watch</button>
+              <button class="amz-watch-btn" @click="goToRedirect">Watch</button>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@
         </div>
       </div>
       <div class="amz-cta-right">
-        <button class="amz-btn-access">Get Instant Access →</button>
+        <button class="amz-btn-access" @click="goToRedirect">Get Instant Access →</button>
         <div class="amz-guarantee">✓ 14-Day Money-Back Guarantee</div>
       </div>
     </section>
@@ -197,6 +197,14 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useConfigStore } from '@/stores/config.js'
+
+const config = useConfigStore()
+
+function goToRedirect() {
+  const url = config.cloaking?.redirectUrl
+  if (url) window.open(url, '_blank')
+}
 
 const activeTopic = ref('Product Research')
 

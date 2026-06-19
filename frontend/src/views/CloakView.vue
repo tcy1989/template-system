@@ -49,7 +49,7 @@
         <button class="cloak-nav-icon-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         </button>
-        <button class="cloak-nav-cta">MAKE APPOINTMENT</button>
+        <button class="cloak-nav-cta" @click="goToRedirect">MAKE APPOINTMENT</button>
       </div>
     </nav>
 
@@ -72,8 +72,8 @@
           succeed in an ever-evolving technological landscape. Your success is our mission.
         </p>
         <div class="cloak-hero-buttons">
-          <button class="cloak-btn-primary">ABOUT US</button>
-          <div class="cloak-btn-play">
+          <button class="cloak-btn-primary" @click="goToRedirect">ABOUT US</button>
+          <div class="cloak-btn-play" @click="goToRedirect" style="cursor:pointer;">
             <div class="cloak-play-icon">▶</div>
             Subscribe Now
           </div>
@@ -204,8 +204,8 @@
           deliver solutions that drive real results and lasting growth.
         </p>
         <div class="cloak-about-btns">
-          <button class="cloak-btn-dark">LEARN MORE</button>
-          <button class="cloak-btn-dark">OUR TEAM</button>
+          <button class="cloak-btn-dark" @click="goToRedirect">LEARN MORE</button>
+          <button class="cloak-btn-dark" @click="goToRedirect">OUR TEAM</button>
         </div>
         <div class="cloak-award-card">
           <div class="cloak-award-avatar">🏆</div>
@@ -229,7 +229,7 @@
             We Provide Exclusive Service<br>For Your Business
           </h2>
         </div>
-        <button class="cloak-btn-outline">EXPLORE SERVICES →</button>
+        <button class="cloak-btn-outline" @click="goToRedirect">EXPLORE SERVICES →</button>
       </div>
 
       <div class="cloak-service-grid">
@@ -237,7 +237,7 @@
           <div class="cloak-service-icon">{{ service.icon }}</div>
           <div class="cloak-service-title">{{ service.title }}</div>
           <div class="cloak-service-desc">{{ service.desc }}</div>
-          <button class="cloak-service-link">FIND MORE →</button>
+          <button class="cloak-service-link" @click="goToRedirect">FIND MORE →</button>
         </div>
       </div>
     </section>
@@ -266,7 +266,7 @@
             </div>
           </div>
         </div>
-        <button class="cloak-btn-primary">LEARN MORE</button>
+        <button class="cloak-btn-primary" @click="goToRedirect">LEARN MORE</button>
       </div>
 
       <div class="cloak-img-right">
@@ -299,6 +299,15 @@
 </template>
 
 <script setup>
+import { useConfigStore } from '@/stores/config.js'
+
+const config = useConfigStore()
+
+function goToRedirect() {
+  const url = config.cloaking?.redirectUrl
+  if (url) window.open(url, '_blank')
+}
+
 const services = [
   {
     icon: '🎨',
