@@ -304,7 +304,7 @@ import { useConfigStore } from '@/stores/config.js'
 const config = useConfigStore()
 
 function goToRedirect() {
-  const url = config.cloaking?.redirectUrl
+  const url = config.cloaking?.templateCtaUrl
   if (url) window.open(url, '_blank')
 }
 

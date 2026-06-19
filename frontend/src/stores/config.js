@@ -26,7 +26,7 @@ export const useConfigStore = defineStore('config', {
     colors: { ...DEFAULTS.colors },
     displayMode: DEFAULTS.displayMode,
     sections: [...DEFAULTS.sections],
-    cloaking: { enabled: false, pageConfigured: false, pageLabel: '', selectedPage: 'webteck', cloakMethod: 'template', redirectUrl: '' },
+    cloaking: { enabled: false, pageConfigured: false, pageLabel: '', selectedPage: 'webteck', cloakMethod: 'template', redirectUrl: '', templateCtaUrl: '' },
     loaded: false,
   }),
 

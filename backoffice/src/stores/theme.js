@@ -40,6 +40,7 @@ export const useThemeStore = defineStore('theme', {
       selectedPage: 'webteck',
       cloakMethod: 'template',
       redirectUrl: '',
+      templateCtaUrl: '',
     },
     hasUnsavedChanges: false,
     isSaving: false,
@@ -104,6 +105,11 @@ export const useThemeStore = defineStore('theme', {
       this.hasUnsavedChanges = true
     },
 
+    setTemplateCtaUrl(url) {
+      this.cloaking.templateCtaUrl = url
+      this.hasUnsavedChanges = true
+    },
+
     async saveChanges() {
       this.isSaving = true
       this.saveError = null
@@ -117,8 +123,9 @@ export const useThemeStore = defineStore('theme', {
             pageConfigured: this.cloaking.pageConfigured,
             pageLabel:     this.cloaking.pageLabel,
             selectedPage:  this.cloaking.selectedPage,
-            cloakMethod:   this.cloaking.cloakMethod,
-            redirectUrl:   this.cloaking.redirectUrl,
+            cloakMethod:      this.cloaking.cloakMethod,
+            redirectUrl:      this.cloaking.redirectUrl,
+            templateCtaUrl:   this.cloaking.templateCtaUrl,
           },
         }
         await themeApi.saveConfig(payload)

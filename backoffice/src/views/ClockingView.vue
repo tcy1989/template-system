@@ -225,6 +225,53 @@
           </div>
         </div>
 
+        <!-- CTA button URL input -->
+        <div class="panel-card">
+          <div class="panel-card-title">
+            <i class="panel-card-title-icon ti ti-cursor-text" aria-hidden="true" />
+            CTA button link
+          </div>
+          <div class="cloak-redirect-wrap">
+            <div class="cloak-redirect-field" :class="{ error: ctaUrlError, valid: ctaUrlValid }">
+              <span class="cloak-redirect-prefix">
+                <i class="ti ti-world" />
+              </span>
+              <input
+                v-model="ctaInput"
+                class="cloak-redirect-input"
+                type="url"
+                placeholder="https://example.com"
+                @input="onCtaInput"
+                @blur="validateCtaUrl"
+              />
+              <span v-if="ctaUrlValid" class="cloak-redirect-status valid">
+                <i class="ti ti-circle-check" />
+              </span>
+              <span v-if="ctaUrlError" class="cloak-redirect-status error">
+                <i class="ti ti-alert-circle" />
+              </span>
+            </div>
+            <div v-if="ctaUrlError" class="cloak-redirect-error">{{ ctaUrlError }}</div>
+            <div class="cloak-redirect-hint">
+              All CTA buttons on the cloak landing page will open this URL in a new tab.
+            </div>
+            <div class="cloak-redirect-actions">
+              <button class="cloak-redirect-save-btn" :disabled="!ctaUrlValid" @click="saveCtaUrl">
+                Apply URL
+              </button>
+              <a v-if="store.cloaking.templateCtaUrl" :href="store.cloaking.templateCtaUrl" target="_blank" class="cloak-redirect-test-btn">
+                <i class="ti ti-external-link" style="margin-right:4px;" />
+                Test link ↗
+              </a>
+            </div>
+            <div v-if="store.cloaking.templateCtaUrl" class="cloak-redirect-current">
+              <i class="ti ti-check" style="color:#22c55e;margin-right:6px;" />
+              CTA buttons link to:
+              <span class="cloak-redirect-url-chip">{{ store.cloaking.templateCtaUrl }}</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Live iframe preview -->
         <div class="panel-card">
           <div class="panel-card-title" style="display:flex;align-items:center;justify-content:space-between;">
@@ -336,6 +383,45 @@ function saveRedirectUrl() {
   validateUrl()
   if (!urlValid.value) return
   store.setRedirectUrl(redirectInput.value.trim())
+}
+
+/* ── CTA URL local state ── */
+const ctaInput    = ref(store.cloaking.templateCtaUrl || '')
+const ctaUrlError = ref('')
+const ctaUrlValid = ref(false)
+
+watch(() => store.cloaking.templateCtaUrl, (v) => {
+  ctaInput.value = v || ''
+  validateCtaUrl()
+})
+
+function validateCtaUrl() {
+  ctaUrlError.value = ''
+  ctaUrlValid.value = false
+  const val = ctaInput.value.trim()
+  if (!val) return
+  try {
+    const u = new URL(val)
+    if (!['http:', 'https:'].includes(u.protocol)) {
+      ctaUrlError.value = 'URL must start with http:// or https://'
+      return
+    }
+    ctaUrlValid.value = true
+  } catch {
+    ctaUrlError.value = 'Please enter a valid URL (e.g. https://example.com)'
+  }
+}
+
+function onCtaInput() {
+  ctaUrlError.value = ''
+  ctaUrlValid.value = false
+  if (ctaInput.value.trim()) validateCtaUrl()
+}
+
+function saveCtaUrl() {
+  validateCtaUrl()
+  if (!ctaUrlValid.value) return
+  store.setTemplateCtaUrl(ctaInput.value.trim())
 }
 
 /* ── Status sub-label ── */
