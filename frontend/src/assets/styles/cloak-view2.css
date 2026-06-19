@@ -1,0 +1,500 @@
+/* ── CloakView2 — AMZ Marketer style ── */
+
+.amz-page {
+  min-height: 100vh;
+  background: #FFFFFF;
+  color: #111827;
+  font-family: 'Inter', system-ui, sans-serif;
+
+  --amz-purple:   #5B21B6;
+  --amz-purple-2: #7C3AED;
+  --amz-purple-3: #8B5CF6;
+  --amz-bg:       #F5F3FF;
+  --amz-bg2:      #EDE9FE;
+  --amz-text:     #111827;
+  --amz-muted:    #6B7280;
+  --amz-border:   #E5E7EB;
+  --amz-yellow:   #FACC15;
+}
+
+/* ── NAV ── */
+.amz-nav {
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+  height: 68px;
+  background: white;
+  border-bottom: 1px solid var(--amz-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.amz-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 18px; font-weight: 700;
+  color: var(--amz-text);
+  margin-right: 36px;
+  white-space: nowrap;
+}
+
+.amz-logo-icon {
+  width: 32px; height: 32px;
+  background: var(--amz-purple);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  flex-shrink: 0;
+}
+
+.amz-nav-links {
+  display: flex; align-items: center; gap: 2px; flex: 1;
+}
+
+.amz-nav-link {
+  padding: 7px 13px;
+  font-size: 13px; font-weight: 500;
+  color: var(--amz-text);
+  cursor: pointer;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.amz-nav-link:hover { color: var(--amz-purple); }
+
+.amz-nav-cta {
+  margin-left: auto;
+  background: var(--amz-purple);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px; font-weight: 700;
+  cursor: pointer; border: none;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.amz-nav-cta:hover { opacity: 0.9; }
+
+/* ── HERO ── */
+.amz-hero {
+  background: var(--amz-bg);
+  padding: 56px 64px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px;
+  align-items: flex-end;
+  gap: 32px;
+  overflow: hidden;
+  min-height: 480px;
+  position: relative;
+}
+
+.amz-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1px solid var(--amz-border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--amz-purple);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.amz-hero-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--amz-purple);
+}
+
+.amz-hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--amz-text);
+  margin-bottom: 16px;
+}
+
+.amz-hero-title .amz-purple-text { color: var(--amz-purple); }
+
+.amz-hero-desc {
+  font-size: 13px;
+  color: var(--amz-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 400px;
+}
+
+.amz-hero-buttons { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+
+.amz-btn-primary {
+  background: var(--amz-purple);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 13px; font-weight: 700;
+  cursor: pointer; border: none;
+  transition: opacity 0.15s;
+  display: flex; align-items: center; gap: 6px;
+}
+
+.amz-btn-primary:hover { opacity: 0.9; }
+
+.amz-btn-ghost {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600;
+  color: var(--amz-text);
+  cursor: pointer;
+  background: none; border: none;
+}
+
+.amz-btn-ghost-play {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--amz-text);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+}
+
+.amz-social-proof {
+  display: flex; align-items: center; gap: 10px;
+}
+
+.amz-avatars { display: flex; }
+.amz-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: linear-gradient(135deg, var(--amz-purple), var(--amz-purple-3));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: white; font-weight: 600;
+  margin-right: -6px;
+}
+
+.amz-social-text { font-size: 11px; color: var(--amz-muted); line-height: 1.4; padding-left: 10px; }
+.amz-stars { color: var(--amz-yellow); font-size: 12px; }
+
+/* Hero center image */
+.amz-hero-img {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  height: 420px;
+}
+
+.amz-hero-photo {
+  width: 280px;
+  height: 400px;
+  background: linear-gradient(160deg, #C4B5FD 0%, #8B5CF6 40%, #6D28D9 100%);
+  border-radius: 140px 140px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.amz-hero-person {
+  position: absolute;
+  bottom: 0;
+}
+
+.amz-hero-deco-star {
+  position: absolute;
+  font-size: 22px;
+  color: var(--amz-purple-2);
+  opacity: 0.4;
+}
+
+/* Hero right stats */
+.amz-hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.amz-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amz-stat-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--amz-bg2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+
+.amz-stat-num { font-size: 18px; font-weight: 800; color: var(--amz-text); }
+.amz-stat-label { font-size: 10px; color: var(--amz-muted); font-weight: 500; }
+
+/* ── BRANDS BAR ── */
+.amz-brands {
+  background: white;
+  border-top: 1px solid var(--amz-border);
+  border-bottom: 1px solid var(--amz-border);
+  padding: 24px 64px;
+  text-align: center;
+}
+
+.amz-brands-label {
+  font-size: 11px;
+  color: var(--amz-muted);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.amz-brands-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.amz-brand-item {
+  font-size: 13px;
+  font-weight: 700;
+  color: #9CA3AF;
+  display: flex; align-items: center; gap: 5px;
+}
+
+/* ── FEATURES ── */
+.amz-features {
+  background: white;
+  padding: 72px 64px;
+}
+
+.amz-section-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--amz-text);
+  line-height: 1.2;
+  margin-bottom: 48px;
+  max-width: 520px;
+}
+
+.amz-features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.amz-feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.amz-feature-icon {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--amz-bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.amz-feature-title { font-size: 12px; font-weight: 700; color: var(--amz-text); }
+.amz-feature-desc  { font-size: 11px; color: var(--amz-muted); line-height: 1.5; }
+
+/* ── VAULT SECTION ── */
+.amz-vault {
+  background: var(--amz-bg);
+  padding: 72px 64px;
+}
+
+.amz-vault-header { margin-bottom: 36px; }
+.amz-vault-eyebrow { font-size: 18px; font-weight: 800; color: var(--amz-text); }
+.amz-vault-sub { font-size: 13px; color: var(--amz-muted); margin-top: 4px; }
+
+.amz-vault-ui {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.amz-vault-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--amz-border);
+  font-size: 12px; color: var(--amz-muted);
+}
+
+.amz-vault-search-icon { font-size: 14px; }
+
+.amz-vault-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.amz-vault-topics {
+  border-right: 1px solid var(--amz-border);
+  padding: 16px;
+}
+
+.amz-vault-topic-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--amz-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
+.amz-vault-topic-item {
+  font-size: 11px;
+  color: var(--amz-muted);
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.amz-vault-topic-item:hover,
+.amz-vault-topic-item.active {
+  background: var(--amz-bg);
+  color: var(--amz-text);
+  font-weight: 500;
+}
+
+.amz-vault-videos { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.amz-video-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amz-video-thumb {
+  width: 70px; height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--amz-purple) 0%, var(--amz-purple-3) 100%);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: white;
+}
+
+.amz-video-info { flex: 1; min-width: 0; }
+.amz-video-title { font-size: 12px; font-weight: 600; color: var(--amz-text); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.amz-video-meta  { font-size: 10px; color: var(--amz-muted); display: flex; align-items: center; gap: 6px; }
+
+.amz-video-avatar {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--amz-bg2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: var(--amz-purple); font-weight: 700;
+}
+
+.amz-watch-btn {
+  background: var(--amz-purple);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border: none;
+  flex-shrink: 0;
+}
+
+/* ── BOTTOM CTA ── */
+.amz-cta {
+  background: white;
+  padding: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-top: 1px solid var(--amz-border);
+}
+
+.amz-cta-left { display: flex; align-items: center; gap: 20px; }
+
+.amz-cta-icon {
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  background: var(--amz-bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.amz-cta-title { font-size: 26px; font-weight: 800; color: var(--amz-text); line-height: 1.2; margin-bottom: 6px; }
+.amz-cta-sub { font-size: 13px; color: var(--amz-muted); max-width: 420px; line-height: 1.6; }
+
+.amz-cta-right { text-align: center; flex-shrink: 0; }
+
+.amz-btn-access {
+  background: var(--amz-purple);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; border: none;
+  transition: opacity 0.15s;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+}
+
+.amz-btn-access:hover { opacity: 0.9; }
+
+.amz-guarantee {
+  font-size: 11px;
+  color: var(--amz-muted);
+  display: flex; align-items: center; gap: 5px;
+  justify-content: center;
+}
+
+/* ── FOOTER ── */
+.amz-footer {
+  background: var(--amz-text);
+  padding: 20px 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+
+.amz-footer-copy { font-size: 11px; color: rgba(255,255,255,0.4); }
+.amz-footer-links { display: flex; gap: 20px; }
+.amz-footer-link { font-size: 11px; color: rgba(255,255,255,0.4); cursor: pointer; transition: color 0.15s; }
+.amz-footer-link:hover { color: white; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1023px) {
+  .amz-nav      { padding: 0 32px; }
+  .amz-hero     { padding: 40px 32px 0; grid-template-columns: 1fr 1fr; }
+  .amz-hero-stats { display: none; }
+  .amz-brands, .amz-features, .amz-vault, .amz-cta { padding: 48px 32px; }
+  .amz-features-grid { grid-template-columns: repeat(3, 1fr); }
+  .amz-footer   { padding: 16px 32px; }
+}
+
+@media (max-width: 767px) {
+  .amz-nav-links { display: none; }
+  .amz-nav { padding: 0 16px; }
+  .amz-hero { grid-template-columns: 1fr; padding: 32px 16px 0; }
+  .amz-hero-img { height: 260px; }
+  .amz-hero-photo { width: 200px; height: 280px; }
+  .amz-hero-title { font-size: 28px; }
+  .amz-brands, .amz-features, .amz-vault { padding: 40px 16px; }
+  .amz-features-grid { grid-template-columns: repeat(2, 1fr); }
+  .amz-vault-body { grid-template-columns: 1fr; }
+  .amz-vault-topics { display: none; }
+  .amz-cta { flex-direction: column; padding: 40px 16px; }
+  .amz-footer { padding: 16px; flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Controlled by backoffice */
+    --color-primary:   #9FA1FF;
+    --color-secondary: #B5BAFF;
+    --color-accent:    #AEE2FF;
+    --color-bg-tint:   #D9F9DF;
+
+    /* Dark theme defaults */
+    --bg:          #0B0C1E;
+    --bg-surface:  #141528;
+    --bg-card:     #1C1D35;
+    --bg-elevated: #242442;
+    --bg-header:   #0D0E22;
+    --bg-sidebar:  #0F1026;
+    --text:        #FFFFFF;
+    --text-muted:  #7A7AA0;
+    --text-faint:  #4A4A70;
+    --border:      rgba(255,255,255,0.07);
+    --border-mid:  rgba(255,255,255,0.12);
+    --green:       #22C55E;
+    --gold:        #F59E0B;
+    --red:         #EF4444;
+    --sidebar-w:   200px;
+    --header-h:    52px;
+  }
+
+  [data-mode="light"] {
+    --bg:          #F0F0F8;
+    --bg-surface:  #FFFFFF;
+    --bg-card:     #F4F4FC;
+    --bg-elevated: #EAEAF8;
+    --bg-header:   #FFFFFF;
+    --bg-sidebar:  #F7F7FF;
+    --text:        #1a1a2e;
+    --text-muted:  #6B6B9A;
+    --text-faint:  #AAAAC8;
+    --border:      rgba(0,0,0,0.07);
+    --border-mid:  rgba(0,0,0,0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body, #app {
+    @apply h-full;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+  a { text-decoration: none; color: inherit; }
+}

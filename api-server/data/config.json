@@ -1,0 +1,64 @@
+{
+  "colors": {
+    "primary": "#FF9FAA",
+    "secondary": "#FFB5BA",
+    "accent": "#FFDAAE",
+    "bgTint": "#FFD9F9"
+  },
+  "displayMode": "dark",
+  "sections": [
+    {
+      "id": "hero",
+      "visible": true,
+      "order": 0
+    },
+    {
+      "id": "providers",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "game-filters",
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "inhouse-games",
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "hot-new-games",
+      "visible": true,
+      "order": 4
+    },
+    {
+      "id": "promo-banners",
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "table-games",
+      "visible": true,
+      "order": 6
+    },
+    {
+      "id": "feature-cards",
+      "visible": true,
+      "order": 7
+    },
+    {
+      "id": "provably-fair",
+      "visible": true,
+      "order": 8
+    }
+  ],
+  "cloaking": {
+    "enabled": false,
+    "pageConfigured": true,
+    "pageLabel": "WebTeck Business Site",
+    "selectedPage": "webteck",
+    "cloakMethod": "template",
+    "redirectUrl": "https://www.google.com"
+  }
+}

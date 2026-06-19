@@ -1,0 +1,155 @@
+.view-scroll {
+  @apply flex-1 overflow-y-auto;
+  background: #FAFAFE;
+}
+
+.view-content {
+  @apply p-5 flex flex-col gap-4;
+}
+
+.panel-card {
+  @apply rounded-xl p-4;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.panel-card-title {
+  @apply flex items-center gap-2 text-xs font-medium mb-3;
+  color: var(--color-text-base);
+}
+
+.panel-card-title-icon {
+  @apply text-base;
+  color: var(--color-primary);
+}
+
+.mode-toggle-group {
+  @apply flex rounded-lg p-0.5;
+  background: var(--color-sidebar-bg);
+  border: 1px solid var(--color-sidebar-border);
+}
+
+.mode-toggle-btn {
+  @apply flex-1 flex items-center justify-center gap-1.5 px-2 py-1.5 rounded-md text-xs cursor-pointer transition-all duration-150;
+  color: var(--color-primary);
+  border: none;
+  background: transparent;
+}
+
+.mode-toggle-btn.active {
+  @apply bg-white font-medium;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-sidebar-border);
+  box-shadow: 0 1px 2px rgba(159,161,255,0.1);
+}
+
+.color-roles-list {
+  @apply flex flex-col gap-3;
+}
+
+.color-role-row {
+  @apply flex items-center justify-between;
+}
+
+.color-role-label {
+  @apply text-xs;
+  color: var(--color-text-muted);
+}
+
+.color-role-control {
+  @apply flex items-center gap-2;
+}
+
+.color-swatch-btn {
+  @apply w-7 h-7 rounded-md cursor-pointer transition-transform hover:scale-105;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.color-hex-input {
+  @apply text-xs rounded-md px-2 py-1 font-mono w-24 outline-none;
+  background: var(--color-sidebar-bg);
+  border: 1px solid var(--color-sidebar-border);
+  color: var(--color-text-muted);
+}
+
+.color-hex-input:focus {
+  border-color: var(--color-primary);
+}
+
+.palette-presets {
+  @apply flex gap-2 pt-3;
+  border-top: 1px solid var(--color-border);
+  margin-top: 12px;
+}
+
+.palette-preset-dot {
+  @apply w-6 h-6 rounded-full cursor-pointer transition-all duration-150;
+  border: 2px solid transparent;
+}
+
+.palette-preset-dot.selected {
+  border-color: var(--color-primary-dark);
+  transform: scale(1.15);
+}
+
+.section-drag-list {
+  @apply flex flex-col gap-1.5;
+}
+
+.section-drag-item {
+  @apply flex items-center gap-2 px-3 py-2 rounded-lg select-none;
+  background: var(--color-sidebar-bg);
+  border: 1px solid var(--color-sidebar-border);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.section-drag-item.dragging-over {
+  border-color: var(--color-primary);
+  background: var(--color-primary-muted);
+}
+
+.drag-handle {
+  @apply cursor-grab text-base;
+  color: var(--color-primary-light);
+}
+
+.drag-handle:active {
+  @apply cursor-grabbing;
+}
+
+.section-order-num {
+  @apply text-xs font-medium w-4 text-center flex-shrink-0;
+  color: var(--color-primary-light);
+}
+
+.section-icon {
+  @apply text-sm flex-shrink-0;
+  color: var(--color-primary);
+}
+
+.section-item-name {
+  @apply flex-1 text-xs;
+  color: var(--color-text-base);
+}
+
+.section-visibility-badge {
+  @apply text-xs px-2 py-0.5 rounded font-medium;
+}
+
+.badge-visible {
+  background: var(--color-accent-green);
+  color: #1a6b2a;
+}
+
+.badge-hidden {
+  @apply bg-gray-100 text-gray-500;
+}
+
+.section-toggle-btn {
+  @apply cursor-pointer text-sm transition-colors duration-150;
+  color: var(--color-primary-light);
+}
+
+.section-toggle-btn.on {
+  color: var(--color-primary);
+}

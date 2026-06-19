@@ -1,0 +1,68 @@
+.topbar {
+  @apply flex items-center justify-between px-6 py-3 flex-shrink-0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  min-height: 52px;
+}
+
+.topbar-title {
+  @apply text-sm font-medium;
+  color: var(--color-text-base);
+}
+
+.topbar-breadcrumb {
+  @apply flex items-center gap-1.5 text-xs;
+  color: var(--color-text-muted);
+}
+
+.topbar-breadcrumb-sep {
+  @apply opacity-40;
+}
+
+.topbar-breadcrumb-current {
+  color: var(--color-primary-dark);
+  @apply font-medium;
+}
+
+.topbar-actions {
+  @apply flex items-center gap-2;
+}
+
+.btn-preview {
+  @apply flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs cursor-pointer transition-all duration-150;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  background: transparent;
+}
+
+.btn-preview:hover {
+  background: var(--color-primary-muted);
+}
+
+.btn-save {
+  @apply flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-medium text-white cursor-pointer transition-all duration-150;
+  background: var(--color-primary);
+  border: none;
+}
+
+.btn-save:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-save:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.unsaved-dot {
+  @apply w-1.5 h-1.5 rounded-full;
+  background: #FFA500;
+}
+
+.save-status {
+  @apply text-xs;
+  color: var(--color-text-muted);
+}
+
+.save-status.saved {
+  color: #22c55e;
+}

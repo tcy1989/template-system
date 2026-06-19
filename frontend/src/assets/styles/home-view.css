@@ -1,0 +1,29 @@
+.home-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.home-main {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--header-h);
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1023px) {
+  :root { --sidebar-w: 180px; }
+}
+
+/* ── Mobile: sidebar is overlaid, no left margin ── */
+@media (max-width: 767px) {
+  .home-main {
+    margin-left: 0;
+    padding: 14px 12px;
+    gap: 16px;
+  }
+}

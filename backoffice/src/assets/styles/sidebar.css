@@ -1,0 +1,63 @@
+.sidebar {
+  @apply flex flex-col flex-shrink-0 h-full;
+  width: 200px;
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-sidebar-border);
+}
+
+.sidebar-logo {
+  @apply px-4 py-4;
+  border-bottom: 1px solid var(--color-sidebar-border);
+}
+
+.sidebar-logo-name {
+  @apply text-sm font-semibold;
+  color: var(--color-primary-dark);
+}
+
+.sidebar-logo-sub {
+  @apply text-xs mt-0.5;
+  color: var(--color-primary-light);
+}
+
+.nav-section {
+  @apply px-2 py-3;
+}
+
+.nav-section-label {
+  @apply text-xs font-medium px-2 mb-1 uppercase tracking-wider;
+  color: var(--color-primary);
+}
+
+.nav-item {
+  @apply flex items-center gap-2 px-3 py-2 rounded-lg text-xs cursor-pointer transition-all duration-150 mb-0.5;
+  color: #4A4A8A;
+}
+
+.nav-item:hover {
+  background: var(--color-primary-muted);
+  color: var(--color-primary-dark);
+}
+
+.nav-item.active {
+  background: var(--color-primary);
+  @apply text-white;
+}
+
+.nav-item-icon {
+  @apply text-base flex-shrink-0;
+  color: var(--color-primary);
+}
+
+.nav-item.active .nav-item-icon {
+  @apply text-white;
+}
+
+.nav-item-label {
+  @apply text-xs;
+}
+
+.sidebar-footer {
+  @apply mt-auto px-2 py-3;
+  border-top: 1px solid var(--color-sidebar-border);
+}

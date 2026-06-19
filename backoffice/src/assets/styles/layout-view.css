@@ -1,0 +1,18 @@
+.placeholder-view {
+  @apply flex flex-col items-center justify-center flex-1 gap-3 text-center;
+}
+
+.placeholder-icon {
+  @apply text-5xl;
+  color: var(--color-primary-light);
+}
+
+.placeholder-title {
+  @apply text-sm font-medium;
+  color: var(--color-text-base);
+}
+
+.placeholder-sub {
+  @apply text-xs;
+  color: var(--color-text-muted);
+}
