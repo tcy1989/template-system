@@ -217,7 +217,7 @@
                 <span class="cloak-page-select-label">
                   {{ store.cloaking.selectedPage === page.id ? 'Currently selected' : 'Select this page' }}
                 </span>
-                <a class="cloak-iframe-open-btn" :href="`http://localhost:3000/?preview=cloak&page=${page.id}`" target="_blank" @click.stop>
+                <a class="cloak-iframe-open-btn" :href="`${frontendUrl}/?preview=cloak&page=${page.id}`" target="_blank" @click.stop>
                   Preview ↗
                 </a>
               </div>
@@ -232,7 +232,7 @@
               <i class="panel-card-title-icon ti ti-eye" aria-hidden="true" />
               Preview — {{ cloakPages.find(p => p.id === store.cloaking.selectedPage)?.name }}
             </span>
-            <a class="cloak-iframe-open-btn" :href="`http://localhost:3000/?preview=cloak&page=${store.cloaking.selectedPage}`" target="_blank">
+            <a class="cloak-iframe-open-btn" :href="`${frontendUrl}/?preview=cloak&page=${store.cloaking.selectedPage}`" target="_blank">
               Open full ↗
             </a>
           </div>
@@ -240,13 +240,13 @@
             <div class="cloak-iframe-toolbar">
               <span class="cloak-iframe-url">
                 <i class="ti ti-world" style="margin-right:5px;font-size:12px;" />
-                localhost:3000/?preview=cloak&amp;page={{ store.cloaking.selectedPage }}
+                {{ frontendUrlDisplay }}/?preview=cloak&amp;page={{ store.cloaking.selectedPage }}
               </span>
             </div>
             <div class="cloak-iframe-container">
               <iframe
                 :key="store.cloaking.selectedPage"
-                :src="`http://localhost:3000/?preview=cloak&page=${store.cloaking.selectedPage}`"
+                :src="`${frontendUrl}/?preview=cloak&page=${store.cloaking.selectedPage}`"
                 class="cloak-iframe"
                 title="Cloak landing page preview"
                 scrolling="yes"
@@ -295,6 +295,9 @@ import { ref, computed, watch } from 'vue'
 import { useThemeStore } from '@/stores/theme.js'
 
 const store = useThemeStore()
+
+const frontendUrl = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:3000'
+const frontendUrlDisplay = frontendUrl.replace(/^https?:\/\//, '')
 
 /* ── Redirect URL local state ── */
 const redirectInput = ref(store.cloaking.redirectUrl || '')
